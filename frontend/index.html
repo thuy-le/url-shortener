@@ -4,9 +4,11 @@
         crossorigin="anonymous"></script>
 
 <h1>Url Shortener</h1>
-
 <input type="text" id="url" placeholder="Please enter a url here"/>
 <button onclick="submitUrl()">SUBMIT</button>
+
+<p id="result"></p>
+<p id="error-message"></p>
 
 <script>
     $(document).ready(function() {
@@ -16,10 +18,13 @@
     function submitUrl() {
         var url = $('#url').val();
         $.post('/make-url', {link: url}).done(function(response) {
-            console.log(response);
+            var link = "localhost/" + JSON.parse(response).shortened;
+            link = "<a href='http://" + link + "'>" + link + "</a>";
+            $('#result').html(link);
         }).fail(function(xhr, status, error) {
             if (status === 400) {
-                console.log("Invalid URL");
+                console.log("Invalid url input");
+                $('#error-message').text("Invalid url input");
             }
         });
     }
