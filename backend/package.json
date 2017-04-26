@@ -1,0 +1,26 @@
+{
+  "name": "url-shortener-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "typings": "./node_modules/typings/dist/bin.js install",
+    "compile": "./node_modules/typescript/bin/tsc --noResolve",
+    "start": "node bin/node_modules/express/main.js",
+    "watch": "./node_modules/typescript/bin/tsc -w --noResolve --t es5"
+  },
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "connect-busboy": "0.0.2",
+    "connect-domain": "0.5.0",
+    "express": "4.14.0",
+    "fs": "0.0.1-security",
+    "mongoose": "4.6.1",
+    "node-uuid": "1.4.7",
+    "path": "0.12.7",
+    "promise": "7.1.1",
+    "sequelize": "3.28.0",
+    "typescript": "2.0.3",
+    "typings": "1.4.0",
+    "wait.for": "0.6.6",
+    "winston": "2.2.0"
+  }
+}

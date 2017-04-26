@@ -1,0 +1,11 @@
+{
+  "name": "url_shortener-frontend",
+  "scripts": {
+    "start": "npm run server",
+    "server": "node server.js 9999"
+  },
+  "dependencies": {
+    "express": "4.15.2",
+    "path": "0.12.7"
+  }
+}

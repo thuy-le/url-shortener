@@ -1,0 +1,27 @@
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<h1>Url Shortener</h1>
+
+<input type="text" id="url" placeholder="Please enter a url here"/>
+<button onclick="submitUrl()">SUBMIT</button>
+
+<script>
+    $(document).ready(function() {
+        console.log('JQUERY IS RUNNING');
+    });
+
+    function submitUrl() {
+        var url = $('#url').val();
+        $.post('/make-url', {link: url}).done(function(response) {
+            console.log(response);
+        }).fail(function(xhr, status, error) {
+            if (status === 400) {
+                console.log("Invalid URL");
+            }
+        });
+    }
+
+</script>

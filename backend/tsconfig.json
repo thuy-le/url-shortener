@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "outDir": "bin/node_modules",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "noResolve": true
+    },
+    "exclude": [
+        "node_modules",
+        "typings/browser",
+        "typings/browser.d.ts"
+    ],
+    "compileOnSave": true
+}

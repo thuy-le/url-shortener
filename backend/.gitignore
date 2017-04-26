@@ -1,0 +1,8 @@
+bin/
+typings/
+/node_modules
+tmp/
+upload/
+.idea/
+.vscode/
+npm-debug.log.*

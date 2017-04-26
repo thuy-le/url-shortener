@@ -1,0 +1,21 @@
+version: '2'
+services:
+
+  backend:
+    image: localhost:5000/url_shortener-backend
+    depends_on:
+      - db
+
+  frontend:
+    image: localhost:5000/url_shortener-frontend    
+  
+  proxy:
+    depends_on:
+      - backend
+      - frontend
+    volumes:
+      - ./configuration/deployment/nginx.conf:/etc/nginx/conf.d/default.conf
+    env_file:
+      - ./configuration/deployment/config
+    ports:
+      - 80:80

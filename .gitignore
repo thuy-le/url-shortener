@@ -1,0 +1,8 @@
+.DS_Store
+npm-debug.log
+.env
+/development
+/deployment
+compose
+compose_config
+.vscode
